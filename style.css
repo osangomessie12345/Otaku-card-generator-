@@ -1,0 +1,164 @@
+
+    :root {
+        --primary-bg: linear-gradient(135deg, #1e1e2f, #3a3a58);
+        --secondary-bg: rgba(255, 255, 255, 0.1);
+        --accent-color: #3498db;
+        --hover-color: #2980b9;
+        --text-color: #fff;
+        --border-color: rgba(189, 195, 199, 0.5);
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Orbitron',sans-serif;
+        background: var(--primary-bg);
+        color: var(--text-color);
+        min-height: 100vh;
+        display: flex;
+        font-size:10px;
+        justify-content: center;
+        align-items: center;
+        overflow: ;
+    }
+
+    .form-container {
+        background: var(--secondary-bg);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        padding: 1rem;
+        border-radius: 15px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        width: 90%;
+        max-width: 500px;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    h3 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        position: relative;
+        text-align: center;
+    }
+
+    h3::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 3px;
+        background: var(--accent-color);
+        margin: 0.5rem auto;
+    }
+
+    .input-group {
+        margin: 1rem 0;
+        position: relative;
+    }
+
+    input[type="text"],
+    input[type="file"] {
+        width: 100%;
+           font-family: 'Orbitron',sans-serif;
+        padding: 0.3rem;
+        border: 2px solid var(--border-color);
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--text-color);
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    input[type="text"]::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    input:focus {
+        outline: none;
+        border-color: var(--accent-color);
+        box-shadow: 0 0 8px var(--accent-color);
+    }
+
+    .btn {
+        background: linear-gradient(45deg, #007bff, #0056b3);
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+           font-family: 'Orbitron',sans-serif;
+        margin: 1rem 0;
+        margin-left:50px;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .btn-creator {
+        background: linear-gradient(45deg, #6c5ce7, #4b3bae);
+        font-size: 0.9rem;
+        margin-left:45px;
+        padding: 0.8rem 1.5rem;
+    }
+
+    button:hover,
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+        .form-container {
+            padding: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        input[type="text"] {
+            padding: 0.8rem;
+        }
+    }
+    .file-label {
+        display: block;
+        background: rgba(255, 0, 255, 0.5);
+        padding: 12px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+        text-align: center;
+        margin-top: 10px;
+        color: white;
+        transition: 0.3s;
+    }
+
+    .file-label:hover {
+        background: rgba(255, 0, 255, 0.8);
+        box-shadow: 0 0 10px #ff00ff;
+    }
+
+    #photoInput {
+        display: none;
+    }
+
+    #preview {
+        margin-top: 15px;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+        display: none;
+        border: 3px solid #ff00ff;
+      }
